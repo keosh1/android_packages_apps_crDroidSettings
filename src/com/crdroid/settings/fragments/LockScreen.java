@@ -38,6 +38,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.lockscreen.PulseSettings;
+import com.crdroid.settings.fragments.lockscreen.MediaArtSettings;
 import com.crdroid.settings.fragments.lockscreen.UdfpsAnimation;
 import com.crdroid.settings.fragments.lockscreen.UdfpsIconPicker;
 import com.crdroid.settings.utils.SystemUtils;
@@ -145,17 +146,8 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_WEATHER_HUMIDITY_INFO, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LS_MEDIA_ART_ENABLED, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LS_MEDIA_ART_FILTER, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LS_MEDIA_ART_FADE_LEVEL, 40, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LS_MEDIA_ART_BLUR_LEVEL, 200, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.AMBIENT_MEDIA_ART_ENABLED, 1, UserHandle.USER_CURRENT);
         PulseSettings.reset(mContext);
+        MediaArtSettings.reset(mContext);
         UdfpsAnimation.reset(mContext);
         UdfpsIconPicker.reset(mContext);
     }
